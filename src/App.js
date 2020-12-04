@@ -15,7 +15,7 @@ class App extends Component {
                 <Header
                     title="Employee Directory!"
                 />
-
+                <SearchBar/>
 
 
             </div>
