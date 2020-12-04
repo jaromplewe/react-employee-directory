@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Employees from './compnonents/Employees';
+import Header from './compnonents/Header';
+import SearchBar from './compnonents/SearchBar';
 
 
 class App extends Component {
@@ -9,7 +12,12 @@ class App extends Component {
     render() {
         return (
             <div>
-                Hello World
+                <Header
+                    title="Employee Directory!"
+                />
+
+
+
             </div>
         );
     }
