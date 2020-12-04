@@ -6,7 +6,11 @@ import SearchBar from './compnonents/SearchBar';
 
 class App extends Component {
 
-    state = {
+    constructor() {
+        super();
+
+        this.state = {
+        }
     }
 
     render() {
@@ -15,8 +19,10 @@ class App extends Component {
                 <Header
                     title="Employee Directory!"
                 />
+
                 <SearchBar/>
 
+                <Employees/>
 
             </div>
         );
