@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Employees from './compnonents/Employees';
+import Employees from './compnonents/employeeTable/Employees';
 import Header from './compnonents/Header';
 import SearchBar from './compnonents/SearchBar';
 
@@ -27,7 +27,6 @@ class App extends Component {
     };
 
     render() {
-        console.log(this.state.employees)
         return (
             <div>
                 <Header
@@ -35,6 +34,8 @@ class App extends Component {
                 />
 
                 <SearchBar />
+
+                <Employees/>
 
                 <ul>
                     {this.state.employees.map(employee => (
