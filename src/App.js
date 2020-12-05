@@ -10,19 +10,39 @@ class App extends Component {
         super();
 
         this.state = {
+            employees: []
         }
     }
 
+    componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(res => {
+                console.log(res)
+                this.setState({
+                    employees: res
+                });
+            })
+            .catch(err => console.log("Error fetching employees: " + err))
+    };
+
     render() {
+        console.log(this.state.employees)
         return (
             <div>
                 <Header
                     title="Employee Directory!"
                 />
 
-                <SearchBar/>
+                <SearchBar />
 
-                <Employees/>
+                <ul>
+                    {this.state.employees.map(employee => (
+                        <li key={employee.id}>
+                            {employee.name} ----- {employee.name} ----- {employee.email} ----- {employee.phone}
+                        </li>
+                    ))}
+                </ul>
 
             </div>
         );
