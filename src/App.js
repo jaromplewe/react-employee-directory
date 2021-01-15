@@ -10,40 +10,45 @@ class App extends Component {
         super();
 
         this.state = {
-            employees: []
+            employees: [],
+            filteredEmployees: [],
+            sortEmployeesByName: 'asc',
+            searchInput: ''
         }
     }
 
-    componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(res => {
-                console.log(res)
-                this.setState({
-                    employees: res
-                });
-            })
-            .catch(err => console.log("Error fetching employees: " + err))
-    };
+    // componentDidMount() {
+    //     fetch('https://jsonplaceholder.typicode.com/users')
+    //         .then(response => response.json())
+    //         .then(res => {
+    //             console.log(res)
+    //             this.setState({
+    //                 employees: res,
+    //                 filteredEmployees: res
+    //             });
+    //         })
+    //         .catch(err => console.log("Error fetching employees: " + err))
+    // };
 
+    toggleSort() {
+
+    }
+    
     render() {
         return (
             <div>
-                <Header
-                    title="Employee Directory!"
-                />
+                <Header />
 
                 <SearchBar />
 
-                <Employees/>
+                <button
+                    onClick
+                ></button>
 
-                <ul>
-                    {this.state.employees.map(employee => (
-                        <li key={employee.id}>
-                            {employee.name} ----- {employee.name} ----- {employee.email} ----- {employee.phone}
-                        </li>
-                    ))}
-                </ul>
+                <Employees
+                    employees={this.state.filteredEmployees}
+                    toggleSort={this.toggleSort}
+                />
 
             </div>
         );

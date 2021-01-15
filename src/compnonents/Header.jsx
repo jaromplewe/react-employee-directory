@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Header(props) {
+function Header() {
     return (
         <h1>
-            {props.title}
+            Employee Directory
         </h1>
     )
 };

@@ -3,3 +3,12 @@ body {
   font-family: "Roboto", "Helvetica Neue Light", "Open Sans", Helvetica;
   min-width: 1100px;
 }
+
+table {
+  border: 1px solid black;
+}
+
+td {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
