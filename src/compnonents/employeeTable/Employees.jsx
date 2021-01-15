@@ -1,42 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EmployeeData from "../EmployeeData";
 
+function Employee() {
 
-class Employee extends React.Component {
-  state = {
-    employeeRecords: [],
-  };
-  componentDidMount = () => {
+  const [employeeRecs, setEmployeeRecs] = useState();
+
+  useEffect(() => {
     axios
       .get("https://randomuser.me/api/?results=500&nat=us")
       .then((records) => {
-        let empdata = records.data.results;
-        let employeeRecordstemp = [];
-        console.log(empdata)
-        for (let i = 0; i < empdata.length; i++) {
+        let employeeData = records.data.results;
+        let employeeRecords = [];
+        for (let i = 0; i < employeeData.length; i++) {
           let erecord = {
-            name: empdata[i].name.first + " " + empdata[i].name.last,
-            email: empdata[i].email,
-            image: empdata[i].picture.medium,
-            phone: empdata[i].cell,
-            dob: empdata[i].dob.date,
+            name: employeeData[i].name.first + " " + employeeData[i].name.last,
+            email: employeeData[i].email,
+            image: employeeData[i].picture.medium,
+            phone: employeeData[i].cell,
+            dob: employeeData[i].dob.date,
           };
-          employeeRecordstemp.push(erecord);
+          employeeRecords.push(erecord);
         }
-        console.log(employeeRecordstemp);
-        this.setState({ employeeRecords: employeeRecordstemp });
+        setEmployeeRecs(employeeRecords);
       });
-  };
+  })
 
-  render() {
-    return (
-      <div>
-        <h2>Employee Details</h2>
-        <EmployeeData employees={this.state.employeeRecords} />>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>Employee Details</h2>
+      <EmployeeData employees={employeeRecs} />>
+    </div>
+  );
 }
 
 export default Employee;
