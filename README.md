@@ -14,7 +14,7 @@ This is a directory for a company with 500 employees. You can search for employe
 ## Screenshots
 
 #### Main Page
-![mainpage](./screenshots/mainpage.img)
+![mainpage](./screenshots/mainpage.png)
 
 #### Search
-![search](./screenshots/search.img)
+![search](./screenshots/search.png)
