@@ -29,7 +29,7 @@ function Employee() {
   return (
     <div>
       <h2>Employee Details</h2>
-      <EmployeeData employees={employeeRecs} />>
+      <EmployeeData employees={employeeRecs} />
     </div>
   );
 }

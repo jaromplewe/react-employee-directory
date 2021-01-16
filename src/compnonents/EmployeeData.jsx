@@ -17,12 +17,6 @@ const EmployeeData = (props) => {
         width: 500,
       },
       {
-        label: "Image",
-        field: "image",
-        sort: "asc",
-        width: 500,
-      },
-      {
         label: "Phone",
         field: "phone",
         sort: "asc",
@@ -37,8 +31,7 @@ const EmployeeData = (props) => {
     ],
     rows:props.employees
   };
-  console.log("Props", props);
-  return <MDBDataTable sorting={true} striped bordered data={data} />;
+  return <MDBDataTable sorting={true} striped bordered data={data} entriesOptions={[25, 50, 100]} entries={25} pagesAmount={4}fullPagination/>;
 };
 
 export default EmployeeData;
