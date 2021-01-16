@@ -1,6 +1,6 @@
 # Employee Directory
 
-Deployed: jaromplewe.github.io/react-employee-directory/
+Deployed: [jaromplewe.github.io/react-employee-directory/](jaromplewe.github.io/react-employee-directory/)
 
 ## Overview
 
