@@ -1,6 +1,6 @@
 # Employee Directory
 
-Deployed: https://still-stream-96011.herokuapp.com/
+Deployed: jaromplewe.github.io/react-employee-directory/
 
 ## Overview
 
